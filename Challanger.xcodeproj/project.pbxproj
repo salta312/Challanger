@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06D12EEC6644D23E341B5B5F /* Pods_Challanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42E950DA86FE72B39151A54 /* Pods_Challanger.framework */; };
+		B704FC9E1DD1D63E002D9CF3 /* NewChallangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B704FC9D1DD1D63E002D9CF3 /* NewChallangeVC.swift */; };
+		B7548F121DD0F67800AA242D /* ChallangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7548F111DD0F67800AA242D /* ChallangesViewController.swift */; };
 		B765F31E1DD063F400CA21B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765F31D1DD063F400CA21B0 /* AppDelegate.swift */; };
 		B765F3201DD063F400CA21B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765F31F1DD063F400CA21B0 /* ViewController.swift */; };
 		B765F3231DD063F400CA21B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B765F3211DD063F400CA21B0 /* Main.storyboard */; };
 		B765F3261DD063F400CA21B0 /* Challanger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B765F3241DD063F400CA21B0 /* Challanger.xcdatamodeld */; };
 		B765F3281DD063F400CA21B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B765F3271DD063F400CA21B0 /* Assets.xcassets */; };
 		B765F32B1DD063F400CA21B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B765F3291DD063F400CA21B0 /* LaunchScreen.storyboard */; };
+		B765F3371DD0798E00CA21B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B765F3361DD0798E00CA21B0 /* GoogleService-Info.plist */; };
+		B7F28FF71DD4C23300ED8F88 /* Challange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F28FF61DD4C23300ED8F88 /* Challange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35C72FF6868AF5226188676E /* Pods-Challanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Challanger/Pods-Challanger.release.xcconfig"; sourceTree = "<group>"; };
+		B704FC9D1DD1D63E002D9CF3 /* NewChallangeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChallangeVC.swift; sourceTree = "<group>"; };
+		B7548F101DD0B6F800AA242D /* Challanger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Challanger.entitlements; sourceTree = "<group>"; };
+		B7548F111DD0F67800AA242D /* ChallangesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallangesViewController.swift; sourceTree = "<group>"; };
 		B765F31A1DD063F400CA21B0 /* Challanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B765F31D1DD063F400CA21B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B765F31F1DD063F400CA21B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,10 @@
 		B765F3271DD063F400CA21B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B765F32A1DD063F400CA21B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B765F32C1DD063F400CA21B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B765F3361DD0798E00CA21B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7F28FF61DD4C23300ED8F88 /* Challange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challange.swift; sourceTree = "<group>"; };
+		C144895EAEAB12EE0613F686 /* Pods-Challanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challanger/Pods-Challanger.debug.xcconfig"; sourceTree = "<group>"; };
+		D42E950DA86FE72B39151A54 /* Pods_Challanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +44,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D12EEC6644D23E341B5B5F /* Pods_Challanger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3547D460663FDC82FD9C5EF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D42E950DA86FE72B39151A54 /* Pods_Challanger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B765F3111DD063F400CA21B0 = {
 			isa = PBXGroup;
 			children = (
 				B765F31C1DD063F400CA21B0 /* Challanger */,
 				B765F31B1DD063F400CA21B0 /* Products */,
+				BE3AB45B33A85E6469776F4A /* Pods */,
+				3547D460663FDC82FD9C5EF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +80,8 @@
 		B765F31C1DD063F400CA21B0 /* Challanger */ = {
 			isa = PBXGroup;
 			children = (
+				B7548F101DD0B6F800AA242D /* Challanger.entitlements */,
+				B765F3361DD0798E00CA21B0 /* GoogleService-Info.plist */,
 				B765F31D1DD063F400CA21B0 /* AppDelegate.swift */,
 				B765F31F1DD063F400CA21B0 /* ViewController.swift */,
 				B765F3211DD063F400CA21B0 /* Main.storyboard */,
@@ -63,8 +89,20 @@
 				B765F3291DD063F400CA21B0 /* LaunchScreen.storyboard */,
 				B765F32C1DD063F400CA21B0 /* Info.plist */,
 				B765F3241DD063F400CA21B0 /* Challanger.xcdatamodeld */,
+				B7548F111DD0F67800AA242D /* ChallangesViewController.swift */,
+				B704FC9D1DD1D63E002D9CF3 /* NewChallangeVC.swift */,
+				B7F28FF61DD4C23300ED8F88 /* Challange.swift */,
 			);
 			path = Challanger;
+			sourceTree = "<group>";
+		};
+		BE3AB45B33A85E6469776F4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C144895EAEAB12EE0613F686 /* Pods-Challanger.debug.xcconfig */,
+				35C72FF6868AF5226188676E /* Pods-Challanger.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B765F32F1DD063F400CA21B0 /* Build configuration list for PBXNativeTarget "Challanger" */;
 			buildPhases = (
+				630D8C278BDC64D15AAEF676 /* [CP] Check Pods Manifest.lock */,
 				B765F3161DD063F400CA21B0 /* Sources */,
 				B765F3171DD063F400CA21B0 /* Frameworks */,
 				B765F3181DD063F400CA21B0 /* Resources */,
+				4102937C4A632672A1F21790 /* [CP] Embed Pods Frameworks */,
+				0B3373C12DCDFEA4F8F5FA3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -99,8 +140,13 @@
 				TargetAttributes = {
 					B765F3191DD063F400CA21B0 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 546WXG898K;
+						DevelopmentTeam = AB65P3C5XF;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -128,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B765F32B1DD063F400CA21B0 /* LaunchScreen.storyboard in Resources */,
+				B765F3371DD0798E00CA21B0 /* GoogleService-Info.plist in Resources */,
 				B765F3281DD063F400CA21B0 /* Assets.xcassets in Resources */,
 				B765F3231DD063F400CA21B0 /* Main.storyboard in Resources */,
 			);
@@ -135,13 +182,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B3373C12DCDFEA4F8F5FA3A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Challanger/Pods-Challanger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4102937C4A632672A1F21790 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Challanger/Pods-Challanger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		630D8C278BDC64D15AAEF676 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B765F3161DD063F400CA21B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B765F3201DD063F400CA21B0 /* ViewController.swift in Sources */,
+				B7F28FF71DD4C23300ED8F88 /* Challange.swift in Sources */,
+				B704FC9E1DD1D63E002D9CF3 /* NewChallangeVC.swift in Sources */,
 				B765F3261DD063F400CA21B0 /* Challanger.xcdatamodeld in Sources */,
+				B7548F121DD0F67800AA242D /* ChallangesViewController.swift in Sources */,
 				B765F31E1DD063F400CA21B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +361,11 @@
 		};
 		B765F3301DD063F400CA21B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C144895EAEAB12EE0613F686 /* Pods-Challanger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 546WXG898K;
+				CODE_SIGN_ENTITLEMENTS = Challanger/Challanger.entitlements;
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = Challanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = saltaim.Challanger;
@@ -276,9 +376,11 @@
 		};
 		B765F3311DD063F400CA21B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C72FF6868AF5226188676E /* Pods-Challanger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 546WXG898K;
+				CODE_SIGN_ENTITLEMENTS = Challanger/Challanger.entitlements;
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = Challanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = saltaim.Challanger;
@@ -306,6 +408,7 @@
 				B765F3311DD063F400CA21B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
