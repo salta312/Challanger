@@ -12,5 +12,6 @@ class Challange: NSObject {
     var name:String!
     var descr:String!
     var imageRef: String!
+    
 
 }

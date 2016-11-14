@@ -10,6 +10,7 @@
 		06D12EEC6644D23E341B5B5F /* Pods_Challanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42E950DA86FE72B39151A54 /* Pods_Challanger.framework */; };
 		B704FC9E1DD1D63E002D9CF3 /* NewChallangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B704FC9D1DD1D63E002D9CF3 /* NewChallangeVC.swift */; };
 		B7548F121DD0F67800AA242D /* ChallangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7548F111DD0F67800AA242D /* ChallangesViewController.swift */; };
+		B75CD1F41DD97A4200054FD6 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CD1F31DD97A4200054FD6 /* MyTableViewCell.swift */; };
 		B765F31E1DD063F400CA21B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765F31D1DD063F400CA21B0 /* AppDelegate.swift */; };
 		B765F3201DD063F400CA21B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765F31F1DD063F400CA21B0 /* ViewController.swift */; };
 		B765F3231DD063F400CA21B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B765F3211DD063F400CA21B0 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		B704FC9D1DD1D63E002D9CF3 /* NewChallangeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChallangeVC.swift; sourceTree = "<group>"; };
 		B7548F101DD0B6F800AA242D /* Challanger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Challanger.entitlements; sourceTree = "<group>"; };
 		B7548F111DD0F67800AA242D /* ChallangesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallangesViewController.swift; sourceTree = "<group>"; };
+		B75CD1F31DD97A4200054FD6 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		B765F31A1DD063F400CA21B0 /* Challanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B765F31D1DD063F400CA21B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B765F31F1DD063F400CA21B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				B7548F111DD0F67800AA242D /* ChallangesViewController.swift */,
 				B704FC9D1DD1D63E002D9CF3 /* NewChallangeVC.swift */,
 				B7F28FF61DD4C23300ED8F88 /* Challange.swift */,
+				B75CD1F31DD97A4200054FD6 /* MyTableViewCell.swift */,
 			);
 			path = Challanger;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75CD1F41DD97A4200054FD6 /* MyTableViewCell.swift in Sources */,
 				B765F3201DD063F400CA21B0 /* ViewController.swift in Sources */,
 				B7F28FF71DD4C23300ED8F88 /* Challange.swift in Sources */,
 				B704FC9E1DD1D63E002D9CF3 /* NewChallangeVC.swift in Sources */,

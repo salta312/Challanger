@@ -15,39 +15,44 @@ protocol MyVCProtocol{
     func receiveDataFromDb()
 }
 class ChallangesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MyVCProtocol{
-    var search = UISearchBar()
+    var search = UISearchController(searchResultsController: nil)
     var button = UIButton()
     let storage = FIRStorage.storage()
     var ref:FIRDatabaseReference!
     let database = FIRDatabase.database().reference()
     var challanges = [Challange]()
     var tableView: UITableView = UITableView()
-
+    var searchedChallanges = [Challange]()
+    var isSearched = false
    // var delegate: MyVCProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        search.searchResultsUpdater = self
+        search.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableHeaderView = search.searchBar
         self.view.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         ref = FIRDatabase.database().reference()
         button.setTitle("+", for: .normal)
         button.addTarget(self, action: #selector(showAnAlert), for: .touchUpInside)
-        view.addSubview(search)
+        //view.addSubview(search.searchBar)
         view.addSubview(button)
         view.addSubview(tableView)
 
-        constrain(search, button, tableView, view){
-            search, button, tableView, view in
-            search.width == view.width
-            search.left == view.left
-            search.height == 20
-            search.top == view.top + 64
+        constrain(button, tableView, view){
+            button, tableView, view in
+           // search.width == view.width
+           // search.left == view.left
+           // search.height == 20
+           // search.top == view.top + 64
             button.bottom == view.bottom
             button.width == view.width
             button.left == view.left
-            tableView.top == search.bottom + 10
+            tableView.top == view.top + 80
             tableView.left == view.left
             tableView.right == view.right
             //tableView.width == view.width
@@ -111,9 +116,16 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         self.dismiss(animated: true, completion: nil)
     }
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        searchedChallanges = challanges.filter({ (challange) -> Bool in
+            return challange.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
     func receiveDataFromDb(){
         //var j: [String: [AnyObject]]?
         database.child("challanges").observe(FIRDataEventType.value, with: { (snapshot) in
+            let c = Challange()
             //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
             // ...
             let j = snapshot.value
@@ -129,7 +141,6 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
                 for index in j4{
                     //print(index.value)
                     do{
-                        let c = Challange()
                         c.descr = index.value["descr"].stringValue
                         c.name = index.value["name"].stringValue
                         c.imageRef = index.value["imageRef"].stringValue
@@ -155,8 +166,11 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print(self.challanges.count)
-        return self.challanges.count
+        if search.isActive && search.searchBar.text != ""{
+            return self.searchedChallanges.count
+        }
+            return self.challanges.count
+       
         
     }
     
@@ -164,15 +178,19 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     {
         return 50
     }
-    
+    var name: String!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         // Code here
         // let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        var name = self.challanges[(indexPath as NSIndexPath).item].name
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        if search.isActive && search.searchBar.text != ""{
+            name = self.searchedChallanges[(indexPath as NSIndexPath).item].name
+        }else{
+            name = self.challanges[(indexPath as NSIndexPath).item].name
+        }
         cell.textLabel?.text = name
-        print(name)
+
       //  cell.delegate = self;
         // let cell = MyTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         // cell.site = arr[(indexPath as NSIndexPath).item]
@@ -200,4 +218,15 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     */
 
+}
+extension ChallangesViewController: UISearchResultsUpdating {
+   // @available(iOS 8.0, *)
+    public func updateSearchResults(for searchController: UISearchController) {
+      //  isSearched = true
+        //hello
+        filterContentForSearchText(searchText: search.searchBar.text!)
+    }
+
+
+    
 }
