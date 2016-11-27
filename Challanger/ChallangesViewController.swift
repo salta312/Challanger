@@ -34,6 +34,7 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+       // tableView.register(MyTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableHeaderView = search.searchBar
         self.view.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         ref = FIRDatabase.database().reference()
@@ -125,20 +126,25 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     func receiveDataFromDb(){
         //var j: [String: [AnyObject]]?
         database.child("challanges").observe(FIRDataEventType.value, with: { (snapshot) in
-            let c = Challange()
+            var c = Challange()
             //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
             // ...
-            let j = snapshot.value
+            //print(<#T##items: Any...##Any#>)
+            var j = snapshot.value
             var j1 = JSON(j)
             //print(j1.dictionaryValue)
             for item in j1.dictionaryValue{
+              //  print(item.key)
+                c.challangeOwnerId = item.key
                // print(item.value)
-                let j2 = item.value
+                var j2 = item.value
                 //print(j2.dictionary)
                 guard let j4 = j2.dictionary else{
                     return
                 }
                 for index in j4{
+                    //print(index.key)
+                    c.challangeId = index.key
                     //print(index.value)
                     do{
                         c.descr = index.value["descr"].stringValue
@@ -179,16 +185,27 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
         return 50
     }
     var name: String!
+    
+    var ch: Challange!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         // Code here
-        // let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        for index in 0...self.challanges.count - 1{
+       //     print(self.challanges[index].name)
+        }
+       // let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+       // let cell = MyTableViewCell(challange: self.challanges[(indexPath as NSIndexPath).item], style: .default, reuseIdentifier: "cell")
         if search.isActive && search.searchBar.text != ""{
             name = self.searchedChallanges[(indexPath as NSIndexPath).item].name
+           // ch = self.searchedChallanges[(indexPath as NSIndexPath).item]
         }else{
             name = self.challanges[(indexPath as NSIndexPath).item].name
+           // ch = self.challanges[(indexPath as NSIndexPath).item]
         }
+        print(self.challanges[(indexPath as NSIndexPath).item].name)
+       // let cell = MyTableViewCell(challange: ch, style: .default, reuseIdentifier: "cell")
+        
         cell.textLabel?.text = name
 
       //  cell.delegate = self;

@@ -12,6 +12,6 @@ class Challange: NSObject {
     var name:String!
     var descr:String!
     var imageRef: String!
-    
-
+    var challangeOwnerId:String!
+    var challangeId: String!
 }

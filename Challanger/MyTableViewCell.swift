@@ -9,6 +9,20 @@
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    init(challange: Challange, style: UITableViewCellStyle, reuseIdentifier: String!){
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        label.text = challange.name
+        contentView.addSubview(label)
+
+
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +35,8 @@ class MyTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
+    
+
+    
 }
