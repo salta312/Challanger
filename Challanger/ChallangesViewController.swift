@@ -126,7 +126,6 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     func receiveDataFromDb(){
         //var j: [String: [AnyObject]]?
         database.child("challanges").observe(FIRDataEventType.value, with: { (snapshot) in
-            var c = Challange()
             //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
             // ...
             //print(<#T##items: Any...##Any#>)
@@ -135,7 +134,8 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
             //print(j1.dictionaryValue)
             for item in j1.dictionaryValue{
               //  print(item.key)
-                c.challangeOwnerId = item.key
+                var owner = item.key
+                //c.challangeOwnerId = item.key
                // print(item.value)
                 var j2 = item.value
                 //print(j2.dictionary)
@@ -143,6 +143,8 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
                     return
                 }
                 for index in j4{
+                    var c = Challange()
+                    c.challangeOwnerId = owner
                     //print(index.key)
                     c.challangeId = index.key
                     //print(index.value)
