@@ -187,6 +187,13 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     {
         return 50
     }
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        var vc = ChallangeViewController()
+        vc.challange = self.challanges[(indexPath as NSIndexPath).item]
+        self.navigationController?.pushViewController(vc, animated: true)
+
+        return indexPath
+    }
     var name: String!
     
     var ch: Challange!

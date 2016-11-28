@@ -18,6 +18,7 @@
 		B765F3281DD063F400CA21B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B765F3271DD063F400CA21B0 /* Assets.xcassets */; };
 		B765F32B1DD063F400CA21B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B765F3291DD063F400CA21B0 /* LaunchScreen.storyboard */; };
 		B765F3371DD0798E00CA21B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B765F3361DD0798E00CA21B0 /* GoogleService-Info.plist */; };
+		B7ABE80B1DEC1AF5006B4BA9 /* ChallangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ABE80A1DEC1AF5006B4BA9 /* ChallangeViewController.swift */; };
 		B7F28FF71DD4C23300ED8F88 /* Challange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F28FF61DD4C23300ED8F88 /* Challange.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		B765F32A1DD063F400CA21B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B765F32C1DD063F400CA21B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B765F3361DD0798E00CA21B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7ABE80A1DEC1AF5006B4BA9 /* ChallangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallangeViewController.swift; sourceTree = "<group>"; };
 		B7F28FF61DD4C23300ED8F88 /* Challange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challange.swift; sourceTree = "<group>"; };
 		C144895EAEAB12EE0613F686 /* Pods-Challanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challanger/Pods-Challanger.debug.xcconfig"; sourceTree = "<group>"; };
 		D42E950DA86FE72B39151A54 /* Pods_Challanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 				B704FC9D1DD1D63E002D9CF3 /* NewChallangeVC.swift */,
 				B7F28FF61DD4C23300ED8F88 /* Challange.swift */,
 				B75CD1F31DD97A4200054FD6 /* MyTableViewCell.swift */,
+				B7ABE80A1DEC1AF5006B4BA9 /* ChallangeViewController.swift */,
 			);
 			path = Challanger;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				B704FC9E1DD1D63E002D9CF3 /* NewChallangeVC.swift in Sources */,
 				B765F3261DD063F400CA21B0 /* Challanger.xcdatamodeld in Sources */,
 				B7548F121DD0F67800AA242D /* ChallangesViewController.swift in Sources */,
+				B7ABE80B1DEC1AF5006B4BA9 /* ChallangeViewController.swift in Sources */,
 				B765F31E1DD063F400CA21B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
