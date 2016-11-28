@@ -24,6 +24,7 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     var tableView: UITableView = UITableView()
     var searchedChallanges = [Challange]()
     var isSearched = false
+    //let storageRef = storage.referenceForURL("gs://<your-firebase-storage-bucket>")
    // var delegate: MyVCProtocol!
 
     override func viewDidLoad() {
@@ -189,26 +190,49 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
     var name: String!
     
     var ch: Challange!
+    var ur: String?
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         // Code here
+        let storageRef = storage.reference(forURL: "gs://challanger-a8042.appspot.com/")
+        
          let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        for index in 0...self.challanges.count - 1{
-       //     print(self.challanges[index].name)
-        }
+
        // let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
        // let cell = MyTableViewCell(challange: self.challanges[(indexPath as NSIndexPath).item], style: .default, reuseIdentifier: "cell")
         if search.isActive && search.searchBar.text != ""{
             name = self.searchedChallanges[(indexPath as NSIndexPath).item].name
            // ch = self.searchedChallanges[(indexPath as NSIndexPath).item]
+            ur = self.searchedChallanges[(indexPath as NSIndexPath).item].imageRef
         }else{
             name = self.challanges[(indexPath as NSIndexPath).item].name
            // ch = self.challanges[(indexPath as NSIndexPath).item]
+            ur = self.challanges[(indexPath as NSIndexPath).item].imageRef
         }
         print(self.challanges[(indexPath as NSIndexPath).item].name)
        // let cell = MyTableViewCell(challange: ch, style: .default, reuseIdentifier: "cell")
         
         cell.textLabel?.text = name
+        cell.imageView?.image = UIImage(named: "nop")
+        guard ur != nil else{
+            return cell;
+        }
+        let starRef = storageRef.child(ur!)
+        DispatchQueue.main.async {
+            starRef.downloadURL(completion: { (url, error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                URLSession.shared.dataTask(with: url!, completionHandler: { (data, responce, error) in
+                    if error != nil{
+                        print(error)
+                        return;
+                    }
+                    cell.imageView?.image = UIImage(data: data!)
+                }).resume()
+            })
+        }
 
       //  cell.delegate = self;
         // let cell = MyTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
