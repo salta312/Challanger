@@ -13,6 +13,7 @@ import Cartography
 class ChallangeViewController: UIViewController {
     var challange: Challange!
     let storage = FIRStorage.storage()
+    var img = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +34,22 @@ class ChallangeViewController: UIViewController {
         let storageRef = storage.reference(forURL: "gs://challanger-a8042.appspot.com/")
         var v = UIView()
         v.backgroundColor = UIColor.white
-        var img = UIImage(named: "nop")
+       // var img = UIImage(named: "nop")
         var imgView = UIImageView(image: img)
            var nameLabel = UILabel()
         nameLabel.text = challange.name
         var descrLabel = UITextView()
+        var v1 = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        v1.color = UIColor.blue
+       // v1.isAnimating = true;
         descrLabel.text = challange.descr
         v.addSubview(nameLabel)
         v.addSubview(imgView)
         v.addSubview(descrLabel)
+        //v.addSubview(v1);
+      //  imgView.addSubview(v1)
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        //imgView.tra
         constrain(nameLabel, imgView, descrLabel, v){
             nameLabel, imgView, descrLabel, v in
             nameLabel.top == v.top + 64
@@ -50,14 +58,24 @@ class ChallangeViewController: UIViewController {
             nameLabel.height == 20
             imgView.top == nameLabel.bottom + 20
             imgView.centerX == v.centerX
-            imgView.width == v.width - 100
-            imgView.height == 50
+            imgView.height == 100
+            imgView.width == 100
             descrLabel.top == imgView.bottom + 20
             descrLabel.centerX == v.centerX
             descrLabel.width == v.width
             descrLabel.height == 30
             
         }
+        v1.topAnchor.constraint(equalTo: imgView.bottomAnchor)
+        v1.centerXAnchor.constraint(equalTo: imgView.centerXAnchor)
+        imgView.addSubview(v1)
+
+       // v1.centerYAnchor.constraint(equalTo: imgView.centerYAnchor )
+      //  imgView.addSubview(v1)
+       // v1.
+       // v1.center = v.center
+       // UIImageView.addSubview(v1)
+        v1.startAnimating()
         guard let ur = challange.imageRef else{
             return v
         }
@@ -74,12 +92,17 @@ class ChallangeViewController: UIViewController {
                         return;
                     }
                     imgView.image = UIImage(data: data!)
+                    v1.stopAnimating()
                 }).resume()
             })
         }
 
         
         return v
+    }
+    func commentView(){
+        var v = UIView()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,3 +122,4 @@ class ChallangeViewController: UIViewController {
     */
 
 }
+

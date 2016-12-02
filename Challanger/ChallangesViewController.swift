@@ -146,7 +146,7 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
                 for index in j4{
                     var c = Challange()
                     c.challangeOwnerId = owner
-                    //print(index.key)
+                    print(index)
                     c.challangeId = index.key
                     //print(index.value)
                     do{
@@ -188,9 +188,57 @@ class ChallangesViewController: UIViewController, UITableViewDelegate, UITableVi
         return 50
     }
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        var ind = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        ind.hidesWhenStopped = true
+        view.addSubview(ind)
+        var myImg: UIImage!
+        constrain(ind, view){
+            ind, view in
+            ind.centerX == view.centerX
+            ind.centerY == view.centerY
+        }
+        ind.startAnimating()
+        myImg = UIImage(named: "nop")
+
+      //  DispatchQueue.main.sync {
+            let storageRef = storage.reference(forURL: "gs://challanger-a8042.appspot.com/")
+            let ch = self.challanges[(indexPath as NSIndexPath).item]
+            guard let ur = ch.imageRef else{
+                return indexPath
+            }
+            let starRef = storageRef.child(ur)
+        //DispatchQueue.main.sync {
+
+            starRef.downloadURL(completion: { (url, error) in
+                if error != nil{
+                    print(error)
+                    //myImg = UIImage(named: "nop")
+
+                    return
+                }
+               // URLSession.data
+                //URLSession.data
+                
+                URLSession.shared.dataTask(with: url!, completionHandler: { (data, responce, error) in
+                    if error != nil{
+                        print(error)
+                       // myImg = UIImage(named: "nop")
+
+                        return
+                    }
+                    myImg = UIImage(data: data!)
+                }).resume()
+            })
+            
+
+   // }
+        ind.stopAnimating()
+        
         var vc = ChallangeViewController()
+        vc.img = myImg
         vc.challange = self.challanges[(indexPath as NSIndexPath).item]
         self.navigationController?.pushViewController(vc, animated: true)
+        
 
         return indexPath
     }
